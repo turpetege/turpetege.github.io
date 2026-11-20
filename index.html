@@ -538,7 +538,7 @@ section{padding-block:clamp(72px,10vw,136px)}
     </dl>
 
     <h3>2. Hangi kişisel verileri işliyoruz?</h3>
-    <p>Bu web sitesinde üyelik veya çerez bulunmamaktadır. Ziyaret sayılarını ölçmek için çerez kullanmayan ve ziyaretçileri tek tek izlemeyen Cloudflare Web Analytics hizmeti kullanılmaktadır. Shell TTS başvuru formuna yazdığınız bilgiler sitede saklanmaz; yalnızca sizin göndereceğiniz bir WhatsApp mesajı olarak hazırlanır. Bizimle telefon, e-posta veya WhatsApp üzerinden iletişime geçtiğinizde ya da TTS başvurusu gönderdiğinizde şu veriler işlenebilir:</p>
+    <p>Bu web sitesinde üyelik veya çerez bulunmamaktadır. Ziyaret sayılarını ölçmek için çerez kullanmayan ve ziyaretçileri tek tek izlemeyen Cloudflare Web Analytics hizmeti kullanılmaktadır. Shell TTS başvuru ve indirim teklifi formuna yazdığınız bilgiler, size dönüş yapabilmemiz amacıyla şirketimizin Google hesabındaki başvuru tablosuna (Google Formlar / E-Tablolar) kaydedilir ve ayrıca sizin göndereceğiniz bir WhatsApp mesajı olarak hazırlanır. Bizimle telefon, e-posta veya WhatsApp üzerinden iletişime geçtiğinizde ya da TTS başvurusu gönderdiğinizde şu veriler işlenebilir:</p>
     <ul>
       <li>Kimlik bilgisi: ad, soyad</li>
       <li>İletişim bilgisi: telefon numarası, e-posta adresi</li>
@@ -628,6 +628,7 @@ section{padding-block:clamp(72px,10vw,136px)}
     err.hidden=true;
     var ys=document.getElementById('tf-yakit'),yv=ys.options?ys.options[ys.selectedIndex].text:v('tf-yakit');var m=EN_?('Hello, I would like to apply for Shell TTS.\n\nCompany / Name: '+v('tf-firma')+(v('tf-yetkili')?'\nContact person: '+v('tf-yetkili'):'')+'\nPhone: '+v('tf-tel')+'\nVehicles: '+(v('tf-arac')||'1')+'\nFuel: '+yv+(v('tf-not')?'\nNote: '+v('tf-not'):'')):('Merhaba, Shell TTS başvurusu yapmak istiyorum.\n\nFirma / Ad Soyad: '+v('tf-firma')+(v('tf-yetkili')?'\nYetkili: '+v('tf-yetkili'):'')+'\nTelefon: '+v('tf-tel')+'\nAraç sayısı: '+(v('tf-arac')||'1')+'\nYakıt: '+v('tf-yakit')+(v('tf-not')?'\nNot: '+v('tf-not'):''));
     msgEl.textContent=m;
+    try{var gp=new URLSearchParams();gp.append('entry.473734770',v('tf-firma'));gp.append('entry.418546240',v('tf-tel'));gp.append('entry.897953399',v('tf-arac')||'1');gp.append('entry.1902823077','');gp.append('entry.1675312669',m+'\n\nKaynak: turpetege.com ana sayfa');if(!(navigator.sendBeacon&&navigator.sendBeacon('https://docs.google.com/forms/d/e/1FAIpQLSemZRc_5cQJZiBBlzZMizsXP0zN6utyLkb7g5xdUTngr_GCuA/formResponse',gp))){fetch('https://docs.google.com/forms/d/e/1FAIpQLSemZRc_5cQJZiBBlzZMizsXP0zN6utyLkb7g5xdUTngr_GCuA/formResponse',{method:'POST',mode:'no-cors',keepalive:true,body:gp}).catch(function(){});}}catch(_){}
     if(WHATSAPP){wa.href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(m);wa.hidden=false;num.innerHTML='<a href="tel:+'+WHATSAPP+'">+'+WHATSAPP+'</a>';}
     else{wa.hidden=true;num.textContent='[WhatsApp numarası eklenecek]';}
     done.hidden=false;done.scrollIntoView({block:'nearest'});
